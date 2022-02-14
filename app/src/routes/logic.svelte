@@ -157,6 +157,9 @@
  -->
 
 <Fruits {fruits} />
+<Fruits {fruits} reverse={true} />
+<Fruits {fruits} slice="-2" />
+<Fruits {fruits} slice="0, 3" />
 
 <!-- 스타일 -->
 <style>
