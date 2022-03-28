@@ -1,0 +1,232 @@
+/* 
+
+*/
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, acronym, address, big, cite, code, 
+del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, 
+sup, tt,var, b, u, i, center, 
+dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, tr, th, td, 
+article, aside, canvas, details, embed, 
+figure, figcaption, 
+footer, header, hgroup, 
+menu, nav, output, ruby, section, summary, 
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: none;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+
+}
+
+ol,ul{
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote::before, blockquote::after, 
+q::before, q::after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+
+body {
+	font-family: 'Noto Sans KR', sans-serif;
+	position: relative;
+	background-color: #ededed;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	color: #717171;
+}
+
+.app {
+	width: 600px;
+	padding: 0;
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.wrap {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+header {
+	width: 100%;
+	height: 140px;
+	padding: 40px 20px 0 20px;
+	background-color: #ffffff;
+	box-shadow: 10px 5px 5px #e7e7e7;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+header h1 {
+	color: #343233;
+	margin-bottom: 20px;
+}
+
+header p{
+	font-size: 1rem;
+	color: #ffffff;
+}
+
+header input {
+	width: 100%;
+	padding: 15px;
+	border: none;
+	border-radius: 3px;
+	border: 1px solid #717171;
+}
+
+/* 
+
+*/
+
+.info {
+	width: 100%;
+	height: 70px;
+	padding: 0 20px;
+	background-color: #ffffff;
+	box-shadow: 10px 5px 5px #e7e7e7;
+	border-bottom: 1px solid #eae9ea;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.info span {
+	color: #444444;
+}
+
+.main {
+	width: 100%;
+	max-height: calc(100vh - 310px);
+	box-shadow: 10px 5px 5px #e7e7e7;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	overflow-y: scroll;
+	-ms-text-overflow: none;
+	scrollbar-width: none;
+
+}
+
+.main::-webkit-scrollbar {
+	display: none;
+}
+
+.main ul {
+	width: 600px;
+
+}
+
+.main ul li {
+	position: relative;
+	width: 100%;
+	padding: 15px 20px;
+	font-size: 1rem;
+	color: #444444;
+	background-color: #ffffff;
+	border-bottom: 1px solid #eaeaea;
+
+	display: flex;
+	align-items: center;
+}
+
+.main ul li:last-child {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.main ul li span {
+	padding: 7px;
+}
+
+.main ul li input[type="checkbox"] {
+	width: 20px;
+	height: 20px;
+	margin-right: 15px;
+}
+
+.main ul li input[type="text"] {
+	width: 600px;
+	padding: 10px;
+	font-size: 1rem;
+	border: 1px solid #717171;
+	z-index: 1000;
+}
+
+.main ul li a {
+	position: absolute;
+	top: 25px;
+	right: 20px;
+	text-decoration: none;
+	color: #444444;
+}
+
+/* 
+
+*/
+
+.btn{
+	padding: 10px;
+	margin-left: 0;
+	margin-right: 5px;
+	font-size: 0.8em;
+	border: none;
+	text-decoration: none;
+	cursor: pointer;
+	background-color: #eaeaea;
+}
+
+.btn:hover {
+	background-color: #343434;
+	color: #ffffff;
+}
+
+.selected {
+	background-color: #343233;
+	color: #ffffff;
+}
+
+.located {
+	border-bottom: 2px solid #00fefe;
+}
+
+
+
