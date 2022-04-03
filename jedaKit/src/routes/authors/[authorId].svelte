@@ -3,11 +3,21 @@
   export const load = async ({ params, fetch }) => {
     // console.dir(params);
     const id = params.authorId;
-    const res = await fetch(`${DOMAIN}/users/${id}`);
-    const user = await res.json();
 
-    const resPosts = await fetch(`${DOMAIN}/posts`);
-    const posts = await resPosts.json();
+    // const res = await fetch(`${DOMAIN}/users/${id}`);
+    // const resPosts = await fetch(`${DOMAIN}/posts`);
+    // 2
+    // const [resUser, resPosts] = await Promise.all([
+    //   fetch(`${DOMAIN}/users/${id}`),
+    //   fetch(`${DOMAIN}/posts`)
+    // ]);
+    const res = await fetch(`${DOMAIN}/users/${id}?_embed=posts`);
+    const user = await res.json();    
+    // const allPosts = await resPosts.json();
+    // const posts = allPosts.filter((post) => {
+    //   return post.userId === user.id;
+    // });
+    const posts = user.posts;
 
     /**
        * {
@@ -42,9 +52,25 @@
 </script>
 
 <!-- {JSON.stringify(user)} -->
-{JSON.stringify(posts)}
+<!-- {JSON.stringify(posts)} -->
 <div class="user">
   <h1>{user.name}</h1>
   <p>{user.company.catchPhrase}</p>
   <p>{user.email}</p>
 </div>
+<div class="posts">
+  <h2>Posts by <i>{user.name}</i></h2>
+  <ul>
+    {#each posts as post}
+      <li>
+        <a href="{`/blog/${post.id}`}">{post.title}</a>
+    </li>
+    {/each}
+  </ul>
+</div>
+
+<style>
+  li{
+    margin-bottom: 0.5rem;
+  }
+</style>

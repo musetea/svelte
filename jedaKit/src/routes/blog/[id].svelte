@@ -2,11 +2,15 @@
   const DOMAIN = "https://jsonplaceholder.typicode.com";
   export const load = async ({ params, fetch }) => {
     // console.dir(params);
+    // 1
     const id = params.id;
     const res = await fetch(`${DOMAIN}/posts/${id}`);
-    const data = await res.json();
-    const userRes = await fetch(`${DOMAIN}/users/${data.userId}`);
+    const post = await res.json();
+    const userRes = await fetch(`${DOMAIN}/users/${post.userId}`);
     const user = await userRes.json();
+    
+    //2
+    
 
     /**
      * {
@@ -28,7 +32,7 @@
 
     return {
       props: {
-        post: data,
+        post: post,
         user: user,
       },
     };

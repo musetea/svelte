@@ -12,27 +12,53 @@
 </script>
 
 <script>
+  // import { paginate, LightPaginationNav } from 'svelte-paginate'
   export let posts;
+  // let currentPage = 1
+  // let pageSize = 4
+  // $: paginatedItems = paginate({ items:posts, pageSize, currentPage })
+  export let serchTerm="";
+  $: searchPosts = posts.filter((post) => {
+    return post.title.includes(serchTerm);
+  });
 </script>
 
 <h1>Posts</h1>
+<input type="text" placeholder="search" bind:value="{serchTerm}">
 <div class="posts">
-  {#each posts as post}
-    <div class="post">
-      <h2>{post.title.substring(0, 20)}</h2>
-      <p>{post.body.substring(0, 80)}</p>
-      <p class="link">
-        <a href={`/blog/${post.id}`} sveltekit:prefetch> Read More </a>
-      </p>
-    </div>
-  {/each}
+  {#if searchPosts.length > 0}
+    {#each searchPosts as post}
+      <div class="post">
+        <h2>{post.title.substring(0, 20)}</h2>
+        <p>{post.body.substring(0, 100)}</p>
+        <p class="link">
+          <a href={`/blog/${post.id}`} sveltekit:prefetch> Read More </a>
+        </p>
+      </div>
+    {/each}
+  {:else}
+    <p>No posts found with <b>"{serchTerm}"</b></p>
+  {/if}
+
+
+  
 </div>
+<!-- 
+<LightPaginationNav
+  totalItems="{posts.length}"
+  pageSize="{pageSize}"
+  currentPage="{currentPage}"
+  limit="{1}"
+  showStepOptions="{true}"
+  on:setPage="{(e) => currentPage = e.detail.page}"
+/> -->
 
 <style>
   .posts {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+    margin: 1rem 0;
   }
   .post {
     padding: 0.5rem;
@@ -49,5 +75,17 @@
 
   a {
     text-decoration: none;
+  }
+  input[type="text"] {
+    padding: .5rem 1rem;
+    border:  1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+  }
+
+  @media screen and (max-width:600px){
+    .posts{
+      grid-template-columns: 1fr;
+    }
   }
 </style>
