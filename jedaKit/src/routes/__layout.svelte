@@ -1,9 +1,10 @@
 <script>
+  import "../app.css";
   import Nav from "$lib/Nav.svelte";
 </script>
 
 <div class="container">
-  <Nav />
+  <nav />
   <slot />
 </div>
 
