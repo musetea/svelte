@@ -4,7 +4,7 @@
 </script>
 
 <div class="container">
-  <nav />
+  <Nav />
   <slot />
 </div>
 
