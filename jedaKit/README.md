@@ -9,5 +9,8 @@
     npm i -D node-sass
 
     # svelte.config.js 수정
+
+### svelte-tailwind
+npx svelte-add@latest tailwindcss
     
 
