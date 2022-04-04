@@ -2,6 +2,10 @@
   import Nav from "$lib/Nav.svelte";
 </script>
 
+<svelte:head>
+  <title>Blog</title>
+</svelte:head>
+
 <div class="container">
   <Nav />
   <slot />

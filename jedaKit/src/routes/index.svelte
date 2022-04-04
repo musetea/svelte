@@ -30,6 +30,10 @@
 
 <!-- {JSON.stringify(session)} -->
 
+<svelte:head>
+  <title>Home</title>
+</svelte:head>
+
 <h1>Posts</h1>
 <input type="text" placeholder="search" bind:value={serchTerm} />
 <div class="posts">

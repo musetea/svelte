@@ -17,6 +17,10 @@
   });
 </script>
 
+<svelte:head>
+  <title>About</title>
+</svelte:head>
+
 <h1>About</h1>
 
 <div class="box wrapper">

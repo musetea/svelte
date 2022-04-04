@@ -1,3 +1,7 @@
+<svelte:head>
+  <title>Article</title>
+</svelte:head>
+
 <div class="container">
   <slot />
 </div>

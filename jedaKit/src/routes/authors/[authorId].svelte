@@ -12,7 +12,7 @@
     //   fetch(`${DOMAIN}/posts`)
     // ]);
     const res = await fetch(`${DOMAIN}/users/${id}?_embed=posts`);
-    const user = await res.json();    
+    const user = await res.json();
     // const allPosts = await resPosts.json();
     // const posts = allPosts.filter((post) => {
     //   return post.userId === user.id;
@@ -51,6 +51,10 @@
   export let posts;
 </script>
 
+<svelte:head>
+  <title>Author</title>
+</svelte:head>
+
 <!-- {JSON.stringify(user)} -->
 <!-- {JSON.stringify(posts)} -->
 <div class="user">
@@ -63,14 +67,14 @@
   <ul>
     {#each posts as post}
       <li>
-        <a href="{`/blog/${post.id}`}">{post.title}</a>
-    </li>
+        <a href={`/blog/${post.id}`}>{post.title}</a>
+      </li>
     {/each}
   </ul>
 </div>
 
 <style>
-  li{
+  li {
     margin-bottom: 0.5rem;
   }
 </style>
