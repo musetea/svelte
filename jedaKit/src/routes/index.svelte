@@ -1,4 +1,5 @@
 <script context="module">
+  // export const ssr = false;
   export const load = async ({ session, fetch }) => {
     // const res = await fetch("/api/post");
     console.log(session);
@@ -27,7 +28,7 @@
   });
 </script>
 
-{JSON.stringify(session)}
+<!-- {JSON.stringify(session)} -->
 
 <h1>Posts</h1>
 <input type="text" placeholder="search" bind:value={serchTerm} />

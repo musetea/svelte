@@ -29,3 +29,9 @@ npx svelte-add@latest tailwindcss
 
 npm i cookie
 npm i uuid
+
+### SSG
+
+- Static Site Generation (adapter-static)
+- SSR을 수행하기 위해 서버를 유지관리,비용을 지불필요 없음.
+- 라우팅 : 클라이언트 라우팅.
