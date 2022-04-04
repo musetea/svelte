@@ -1,11 +1,13 @@
 <script context="module">
-  export const load = async ({ fetch }) => {
+  export const load = async ({ session, fetch }) => {
     // const res = await fetch("/api/post");
+    console.log(session);
     const res = await fetch("https://jsonplaceholder.typicode.com/posts");
     const posts = await res.json();
     return {
       props: {
         posts,
+        session,
       },
     };
   };
@@ -13,8 +15,9 @@
 
 <script>
   // import { paginate, LightPaginationNav } from 'svelte-paginate'
-
+  // import { session } from "$app/stores";
   export let posts;
+  export let session;
   // let currentPage = 1
   // let pageSize = 4
   // $: paginatedItems = paginate({ items:posts, pageSize, currentPage })
@@ -23,6 +26,8 @@
     return post.title.includes(serchTerm);
   });
 </script>
+
+{JSON.stringify(session)}
 
 <h1>Posts</h1>
 <input type="text" placeholder="search" bind:value={serchTerm} />

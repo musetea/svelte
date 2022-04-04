@@ -7,7 +7,7 @@ userName.subscribe((val) => browser && (localStorage.userName = val));
 
 export const fruits = writable(browser && (JSON.parse(localStorage.getItem("fruits")) || ["apple", "orange", "graphs"]));
 fruits.subscribe((val) => {
-    console.log(val);
+    // console.log(val);
     browser && localStorage.setItem("fruits",JSON.stringify(val));
 });
 

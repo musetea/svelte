@@ -23,3 +23,9 @@ npx svelte-add@latest tailwindcss
     npm init svelte@next 
     npx svelte-add@lastest tailwindcss
     npm install -D daisyui
+```
+
+### LOGIN
+
+npm i cookie
+npm i uuid
