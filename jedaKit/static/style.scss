@@ -1,0 +1,9 @@
+$info-color: blue;
+
+.wrapper {
+    background-color: lightgreen;
+}
+
+@mixin danger {
+    color: red;
+}

@@ -7,6 +7,7 @@
   import { fruits, user } from "../stores";
   import AuthorId from "./authors/[authorId].svelte";
   // import "unocss";
+  //import "../../static/style.scss";
 
   let fruit = "";
 
@@ -18,7 +19,7 @@
 
 <h1>About</h1>
 
-<div class="box">
+<div class="box wrapper">
   <h2>SCSS About</h2>
 </div>
 
@@ -34,6 +35,10 @@
 
 <div class="fruits m-10">
   <h2>Fruits</h2>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. eiciendis cum illum
+    nostrum.
+  </p>
   <ul>
     {#each $fruits as item}
       <li>{item}</li>
@@ -60,10 +65,20 @@
 
 <style lang="scss">
   .box {
+    padding: 1rem;
     background-color: black;
 
     h2 {
       color: white;
+    }
+  }
+
+  .fruits {
+    h2 {
+      color: $info-color;
+    }
+    p {
+      @include danger;
     }
   }
 </style>

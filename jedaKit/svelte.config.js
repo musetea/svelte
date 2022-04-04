@@ -15,7 +15,10 @@ const config = {
   preprocess: [
     preprocess({
       postcss: true,
-      includePaths: [path.join(__dirname, 'relative/path')]
+      includePaths: [path.join(__dirname, 'relative/path')],
+      scss:{
+        prependData: "@import './static/style.scss'; ",
+      }
     }),
   ],
   kit: {

@@ -46,3 +46,7 @@ vite:{
   ],
 }
 npm i -D @unocss/preset-attributify
+
+### SASS
+
+npm i -D svelte-preprocess sass
