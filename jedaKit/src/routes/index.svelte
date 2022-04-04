@@ -2,7 +2,7 @@
   // export const ssr = false;
   export const load = async ({ session, fetch }) => {
     // const res = await fetch("/api/post");
-    console.log(session);
+    // console.log(session);
     const res = await fetch("https://jsonplaceholder.typicode.com/posts");
     const posts = await res.json();
     return {

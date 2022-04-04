@@ -9,8 +9,10 @@
     "prepare": "svelte-kit sync"
   },
   "devDependencies": {
+    "@iconify/json": "^2.1.24",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
+    "@unocss/preset-attributify": "^0.30.11",
     "autoprefixer": "^10.4.2",
     "daisyui": "^2.13.6",
     "node-sass": "^7.0.1",
@@ -19,7 +21,8 @@
     "svelte": "^3.44.0",
     "svelte-paginate": "^0.0.1",
     "svelte-preprocess": "^4.10.1",
-    "tailwindcss": "^3.0.12"
+    "tailwindcss": "^3.0.12",
+    "unocss": "^0.30.11"
   },
   "type": "module",
   "dependencies": {

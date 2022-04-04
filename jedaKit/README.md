@@ -35,3 +35,14 @@ npm i uuid
 - Static Site Generation (adapter-static)
 - SSR을 수행하기 위해 서버를 유지관리,비용을 지불필요 없음.
 - 라우팅 : 클라이언트 라우팅.
+
+### UNO CSS
+
+<https://github.com/unocss/unocss>
+import Unocss from 'unocss/vite'
+vite:{
+     plugins: [
+        Unocss({ /*options*/ }),
+  ],
+}
+npm i -D @unocss/preset-attributify

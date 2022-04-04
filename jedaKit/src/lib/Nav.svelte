@@ -22,10 +22,12 @@
       {/each}
     </ul>
   </nav>
+  <div class="i-ph-anchor-simple-thin" />
+  <div class="i-simple-icons:svelte">Svelte</div>
 
-  <div class="user">
+  <div class="user ml-10">
     <h2>{$userName}</h2>
-    <input type="text" name="" id="" bind:value={$userName} />
+    <!-- <input type="text" name="" id="" bind:value={$userName} /> -->
   </div>
 </header>
 
