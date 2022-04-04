@@ -13,18 +13,19 @@
 
 <script>
   // import { paginate, LightPaginationNav } from 'svelte-paginate'
+
   export let posts;
   // let currentPage = 1
   // let pageSize = 4
   // $: paginatedItems = paginate({ items:posts, pageSize, currentPage })
-  export let serchTerm="";
-  $: searchPosts = posts.filter((post) => {
+  export let serchTerm = "";
+  $: searchPosts = posts.filter(post => {
     return post.title.includes(serchTerm);
   });
 </script>
 
 <h1>Posts</h1>
-<input type="text" placeholder="search" bind:value="{serchTerm}">
+<input type="text" placeholder="search" bind:value={serchTerm} />
 <div class="posts">
   {#if searchPosts.length > 0}
     {#each searchPosts as post}
@@ -39,10 +40,8 @@
   {:else}
     <p>No posts found with <b>"{serchTerm}"</b></p>
   {/if}
-
-
-  
 </div>
+
 <!-- 
 <LightPaginationNav
   totalItems="{posts.length}"
@@ -52,7 +51,6 @@
   showStepOptions="{true}"
   on:setPage="{(e) => currentPage = e.detail.page}"
 /> -->
-
 <style>
   .posts {
     display: grid;
@@ -77,14 +75,14 @@
     text-decoration: none;
   }
   input[type="text"] {
-    padding: .5rem 1rem;
-    border:  1px solid #ddd;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
     border-radius: 0.5rem;
     font-size: 1rem;
   }
 
-  @media screen and (max-width:600px){
-    .posts{
+  @media screen and (max-width: 600px) {
+    .posts {
       grid-template-columns: 1fr;
     }
   }

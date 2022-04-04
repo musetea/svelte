@@ -6,6 +6,7 @@
   import LiftCycle from "./LiftCycle.svelte";
   import Body from "./Legs/Body.svelte";
   import Nav from "./Nav.svelte";
+  import { userName } from "./stores";
 
   let page;
 
@@ -17,7 +18,9 @@
 <h1><a href="/"> WEB JEDA</a></h1>
 <hr />
 <Nav on:page={OnPage} />
-{page}
+<h2>{$userName}</h2>
+<input type="text" name="" id="" bind:value={$userName} />
+
 <!-- <Bomb /> <Select /> <Box /> -->
 <!-- <Video /> -->
 
